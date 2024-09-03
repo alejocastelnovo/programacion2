@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
+
   selector: 'app-empleados',
   templateUrl: './empleados.component.html',
   styleUrls: ['./empleados.component.css']
@@ -8,6 +9,7 @@ import { Component } from '@angular/core';
 
 
 export class EmpleadosComponent {
+  public valor: string = ''
   public empleados: any[] = [
     {
       nombre: "Pedro",
@@ -55,9 +57,19 @@ export class EmpleadosComponent {
       }
     }
   ];
+Valor: any;
   
 
   saludarEmpleado(nombre: string) {
     alert(`Hola, ${nombre}!`)
   }
+
+
+  cambiarValor(){
+    this.valor = "franco"
+  }
 }
+
+
+
+
