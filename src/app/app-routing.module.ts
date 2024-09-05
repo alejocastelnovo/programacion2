@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { HorariosComponent } from './components/horarios/horarios.component';
 
-const routes: Routes = [];
+
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  imports: [],
+  exports: []
 })
 export class AppRoutingModule { }

@@ -1,0 +1,13 @@
+/* Puedes ajustar estos estilos según el diseño que desees */
+.main-container {
+  display: flex;
+}
+
+.main-content {
+  flex: 1;
+  padding: 16px;
+  margin-left: 250px; /* Ajustar según el ancho del sidebar */
+  padding: 20px; /* Espaciado interno para el contenido */
+  width: calc(100% - 250px); /* Ancho del contenido restante */
+}
+
