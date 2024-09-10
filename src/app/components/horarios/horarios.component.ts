@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./horarios.component.css']
 })
 export class HorariosComponent {
+  diaSeleccionado: string = 'todos';
 
+  cargarHorarios(dia: string) {
+    this.diaSeleccionado = dia; }
 }

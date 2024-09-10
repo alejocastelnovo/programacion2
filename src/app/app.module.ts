@@ -5,18 +5,23 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { RouterModule, Routes } from '@angular/router';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HorariosComponent } from './components/horarios/horarios.component';
-import { MainComponent } from './components/main/main.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { AdministrarMateriasComponent } from './components/administrar-materias/administrar-materias.component';
+import { ConvertidorFechasComponent } from './components/convertidor-fechas/convertidor-fechas.component';
+import { AppRoutingModule } from './app-routing.module';
+
+
 
 const routes: Routes = [
-  { path: '', component: MainComponent },  // Ruta para el componente principal
-  { path: 'horarios', component: HorariosComponent },  // Ruta para el componente Horarios
+  { path: 'horarios', component: HorariosComponent },
+  { path: 'administrar-materias', component: AdministrarMateriasComponent },
+  { path: 'convertidor-fechas', component: ConvertidorFechasComponent },
+  { path: '', redirectTo: '/horarios', pathMatch: 'full' }, // para ir a horarios x defecto
 ];
 
 @NgModule({
@@ -25,21 +30,24 @@ const routes: Routes = [
     HeaderComponent,
     FooterComponent,
     HorariosComponent,
-    MainComponent,
     SidebarComponent,
     NavbarComponent,
+    AdministrarMateriasComponent,
+    ConvertidorFechasComponent,
+
 ],
   imports: [
-    BrowserModule,
+    BrowserModule, 
     BrowserAnimationsModule,
     MatToolbarModule,
     MatIconModule,
     MatTooltipModule,
-    RouterModule.forRoot(routes), // Agrega el RouterModule para las rutas
+    AppRoutingModule,
+    [RouterModule.forRoot(routes)],
   ],
+
+  exports: [RouterModule] ,
   providers: [],
-  bootstrap: [AppComponent] // Asegúrate de agregar AppComponent aquí
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
-
-

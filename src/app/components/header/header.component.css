@@ -21,3 +21,9 @@
   background-color: bisque; 
   margin: 0 auto; 
 }
+
+.home-icon {
+  position: absolute;
+  left: 20px;
+  cursor: pointer;
+}
