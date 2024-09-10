@@ -14,10 +14,10 @@ export interface Horario {
 })
 export class HorariosService {
   private horariosMaterias: Horario[] = [
-    { hora: '08:00 - 09:00', lunes: 'Programación 2', martes: 'Redes', miercoles: '', jueves: 'Matemáticas', viernes: '' },
-    { hora: '09:00 - 10:00', lunes: '', martes: 'Algoritmos', miercoles: 'Estructura de Datos', jueves: '', viernes: 'Física' },
-    { hora: '10:00 - 11:00', lunes: 'Bases de Datos', martes: '', miercoles: 'Sistemas Operativos', jueves: '', viernes: 'Química' },
-    { hora: '11:00 - 12:00', lunes: 'Calculo', martes: 'Programación 2', miercoles: '', jueves: 'Redes', viernes: '' },
+    { hora: '08:00 - 09:00', lunes: 'Practica Profesionalizante II', martes: 'Derecho', miercoles: 'Base de Datos II', jueves: 'Practica Profesionalizante II', viernes: 'Gestion de Proyectos' },
+    { hora: '09:00 - 10:00', lunes: 'Practica Profesionalizante II', martes: 'Derecho', miercoles: 'Base de Datos II', jueves: 'Practica Profesionalizante II', viernes: 'Gestion de Proyectos' },
+    { hora: '10:00 - 11:00', lunes: 'Redes y Comunicacion', martes: 'Programacion II', miercoles: '', jueves: 'Programacion II', viernes: '' },
+    { hora: '11:00 - 12:00', lunes: 'Redes y Comunicacion', martes: 'Programacion II', miercoles: '', jueves: 'Programacion II', viernes: '' },
   ];
 
   obtenerHorarios(dia?: string): Horario[] {
