@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
+
 
 @Component({
   selector: 'app-horarios',
@@ -6,8 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./horarios.component.css']
 })
 export class HorariosComponent {
-  diaSeleccionado: string = 'todos';
+  selectedDay: string = 'Todos los días';
 
-  cargarHorarios(dia: string) {
-    this.diaSeleccionado = dia; }
+
+  onDayChange(dia: string): void {
+    this.selectedDay = dia;
+  }
 }

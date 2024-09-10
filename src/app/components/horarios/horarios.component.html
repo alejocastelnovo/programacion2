@@ -1,2 +1,15 @@
+<h2>Seleccione los horarios que desea visualizar</h2>
+<mat-form-field appearance="fill">
+<mat-label>Día</mat-label>
+<mat-select [(value)]="selectedDay" (selectionChange)="onDayChange($event.value)">
+    <mat-option value="Todos los días">Todos los días</mat-option>
+    <mat-option value="Lunes">Lunes</mat-option>
+    <mat-option value="Martes">Martes</mat-option>
+    <mat-option value="Miércoles">Miércoles</mat-option>
+    <mat-option value="Jueves">Jueves</mat-option>
+    <mat-option value="Viernes">Viernes</mat-option>
+</mat-select>
+</mat-form-field>
 
-    <h2>Seleccione los horarios que desea visualizar</h2>
+<!-- Componente hijo que muestra los horarios -->
+<app-horarios-list [selectedDay]="selectedDay"></app-horarios-list>

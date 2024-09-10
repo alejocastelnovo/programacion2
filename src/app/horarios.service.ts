@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
 
 export interface Horario {
-  dia: string;
-  materia: string;
-  hora: string;
+  dia: string; 
+  materia: string; 
+  horaInicio: string; 
+  horaFin: string; 
 }
 
 @Injectable({
@@ -11,21 +12,20 @@ export interface Horario {
 })
 export class HorariosService {
   private horariosMaterias: Horario[] = [
-    { dia: 'lunes', materia: 'Matemáticas', hora: '08:00 - 09:30' },
-    { dia: 'martes', materia: 'Ciencias', hora: '09:30 - 11:00' },
-    // Otros horarios...
+    { dia: 'Lunes', materia: 'Programación 2', horaInicio: '08:00', horaFin: '08:40' },
+    { dia: 'Martes', materia: 'Redes', horaInicio: '09:00', horaFin: '09:40' },
+
   ];
 
-  obtenerHorarios(): Horario[] {
+  obtenerHorarios(dia?: string): Horario[] {
+    if (dia && dia !== 'Todos los días') {
+      return this.horariosMaterias.filter(horario => horario.dia === dia);
+    }
     return this.horariosMaterias;
   }
 
   agregarHorario(horario: Horario): number {
-    try {
-      this.horariosMaterias.push(horario);
-      return 1;
-    } catch {
-      return -1;
-    }
+    this.horariosMaterias.push(horario);
+    return 1; 
   }
 }

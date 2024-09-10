@@ -1,14 +1,21 @@
-import { Component } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Component({
-  selector: 'app-horarios',
-  templateUrl: './horarios.component.html',
-  styleUrls: ['./horarios.component.css']
-})
-export class HorariosComponent {
-  diaSeleccionado: string = 'todos';
+import { HorariosComponent } from './horarios.component';
 
-  cargarHorarios(dia: string) {
-    this.diaSeleccionado = dia; // Actualiza el día seleccionado
-  }
-}
+describe('HorariosComponent', () => {
+  let component: HorariosComponent;
+  let fixture: ComponentFixture<HorariosComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      declarations: [HorariosComponent]
+    });
+    fixture = TestBed.createComponent(HorariosComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});
