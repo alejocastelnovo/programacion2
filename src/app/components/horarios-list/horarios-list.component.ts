@@ -7,7 +7,8 @@ import { HorariosService, Horario } from 'src/app/horarios.service';
   styleUrls: ['./horarios-list.component.css']
 })
 export class HorariosListComponent implements OnInit, OnChanges {
-  @Input() selectedDay!: string;  // Recibimos el día seleccionado como entrada
+
+  @Input() selectedDay!: string;  //  día seleccionado como entrada
   horarios: Horario[] = [];
   displayedColumns: string[] = ['hora'];
 
@@ -17,7 +18,7 @@ export class HorariosListComponent implements OnInit, OnChanges {
     this.loadHorarios();
   }
 
-  // Detecta cambios en el día seleccionado y carga los horarios correspondientes
+  // se fija si hay cambios en el día seleccionado y carga los horarios correspondientes
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['selectedDay']) {
       this.loadHorarios();
@@ -32,4 +33,5 @@ export class HorariosListComponent implements OnInit, OnChanges {
     }
     this.horarios = this.horariosService.obtenerHorarios(this.selectedDay);
   }
+  
 }

@@ -1,11 +1,11 @@
 <table mat-table [dataSource]="horarios" class="mat-elevation-z8">
-  <!-- Hora  -->
+
   <ng-container matColumnDef="hora">
     <th mat-header-cell *matHeaderCellDef>Hora</th>
     <td mat-cell *matCellDef="let horario">{{ horario.hora }}</td>
   </ng-container>
 
-  <!-- Lunes  -->
+
   <ng-container matColumnDef="lunes">
     <th mat-header-cell *matHeaderCellDef>Lunes</th>
     <td mat-cell *matCellDef="let horario">{{ horario.lunes || "-" }}</td>
@@ -17,9 +17,9 @@
     <td mat-cell *matCellDef="let horario">{{ horario.martes || "-" }}</td>
   </ng-container>
 
-  <!-- Miércoles  -->
+  <!-- Miercoles  -->
   <ng-container matColumnDef="miercoles">
-    <th mat-header-cell *matHeaderCellDef>Miércoles</th>
+    <th mat-header-cell *matHeaderCellDef>Miercoles</th>
     <td mat-cell *matCellDef="let horario">{{ horario.miercoles || "-" }}</td>
   </ng-container>
 

@@ -9,7 +9,6 @@ import { Component, Output } from '@angular/core';
 export class HorariosComponent {
   selectedDay: string = 'Todos los días';
 
-
   onDayChange(dia: string): void {
     this.selectedDay = dia;
   }
