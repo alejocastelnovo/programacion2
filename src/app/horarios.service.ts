@@ -21,7 +21,7 @@ export class HorariosService {
     { hora: '11:00 - 12:00', lunes: 'Redes y Comunicacion', martes: 'Programacion II', miercoles: '', jueves: 'Programacion II', viernes: '' },
   ];
   
-  obtenerHorarios(dia?: string): Horario[] {
+  obtenerHorarios(dia?: string): Horario[] { 
     if (dia && dia !== 'Todos los días') {
       const diaLower = dia.toLowerCase(); 
       return this.horariosMaterias.map(horario => ({
@@ -31,4 +31,15 @@ export class HorariosService {
     }
     return this.horariosMaterias;
   }
+
+  agregarHorario(horario: Horario): number {
+    try {
+      this.horariosMaterias.push(horario); 
+      return 1; 
+    } catch (error) {
+      console.error('Error al agregar el horario:', error);
+      return -1; 
+    }
+  }
+
 }

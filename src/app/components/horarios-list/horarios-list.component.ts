@@ -34,4 +34,7 @@ export class HorariosListComponent implements OnInit, OnChanges {
     this.horarios = this.horariosService.obtenerHorarios(this.selectedDay);
   }
   
+
+
+
 }
